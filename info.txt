@@ -2,7 +2,7 @@
 cmake -P script.cmake
 
 #setup build tree from source
-cmake -B <build_tree> -B <source_tree>
+cmake -B <build_tree> -S <source_tree>
 
 #build the build tree
 cmake --build <build_tree>
