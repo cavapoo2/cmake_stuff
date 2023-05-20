@@ -6,3 +6,9 @@ cmake -B <build_tree> -S <source_tree>
 
 #build the build tree
 cmake --build <build_tree>
+
+#to add a sub directory do
+add_subdirectory(name_of_directory)
+
+#to add an option, like so, with default OFF, this can be invoked from comand line -DNAME_OF_OPTION=ON
+option(NAME_OF_OPTION "Text describing option" OFF)
