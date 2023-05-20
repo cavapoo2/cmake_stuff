@@ -17,3 +17,26 @@ option(NAME_OF_OPTION "Text describing option" OFF)
 include(CMakeDependentOption)
 cmake_dependent_option
 cmake_dependent_option(CHAPTER1_PRINT_HELLO_WORLD "Print a nice greeting from chapter1" ON CHAPTER1_PRINT_LANGUAGE_EXAMPLES ON)
+
+#if statement
+if(CHAPTER1_PRINT_HELLO_WORLD)
+  message(STATUS "Chapter1: welcome to chapter 1!")
+endif()
+
+#setting a list 
+set(MYLIST abc def ghi) 
+message(STATUS "Chapter1: MYLIST is: ${MYLIST}")
+
+#append to list
+list(APPEND MYLIST "xyz") 
+message(STATUS "Chapter1: MYLIST is: ${MYLIST}")
+
+#find and get values from a list
+list(FIND MYLIST def ABC_INDEX) 
+list(GET MYLIST ${ABC_INDEX} ABC) 
+
+#add MYVAR as cache variable with the value foo
+set(ch1_MYVAR foo CACHE STRING "Variable foo that configures bar")
+
+
+
