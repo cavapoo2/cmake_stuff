@@ -12,3 +12,8 @@ add_subdirectory(name_of_directory)
 
 #to add an option, like so, with default OFF, this can be invoked from comand line -DNAME_OF_OPTION=ON
 option(NAME_OF_OPTION "Text describing option" OFF)
+
+#cmake dependent option - use this to use cmake_dependent_option
+include(CMakeDependentOption)
+cmake_dependent_option
+cmake_dependent_option(CHAPTER1_PRINT_HELLO_WORLD "Print a nice greeting from chapter1" ON CHAPTER1_PRINT_LANGUAGE_EXAMPLES ON)
