@@ -38,5 +38,25 @@ list(GET MYLIST ${ABC_INDEX} ABC)
 #add MYVAR as cache variable with the value foo
 set(ch1_MYVAR foo CACHE STRING "Variable foo that configures bar")
 
+# set a property for this directory
+set_property(DIRECTORY PROPERTY CHAPTER1_PROPERTY "Hello from chapter 1")
+get_property(CH1_PROPERTY_VARIABLE DIRECTORY PROPERTY CHAPTER1_PROPERTY)
+message(STATUS "Chapter1: Property value for CHAPTER1_PROPERTy is '${CH1_PROPERTY_VARIABLE}'")
+
+#loop examples
+set(MYVAR 0)
+while(MYVAR LESS "5") 
+   message(STATUS "Chapter1: MYVAR is '${MYVAR}'")
+   math(EXPR MYVAR "${MYVAR}+1") 
+endwhile() 
+
+#foreach loop
+foreach(ITEM IN LISTS MYLIST) 
+  message(STATUS "Chapter1: ITEM from MYLIST is '${ITEM}'")
+endforeach() 
+
+
+
+
 
 
